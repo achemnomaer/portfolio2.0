@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import heroImg from "@/assets/illustrations/hero2.svg";
+import logo from "@/assets/logo2.svg";
 import Image from "next/image";
 
 import {
@@ -8,17 +9,23 @@ import {
   IconBrandGithub,
   IconBrandLinkedin,
 } from "@tabler/icons-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
     <div className="">
       <Header />
-      <section className="mt-24 w-full mx-auto max-w-screen-[1400px] pb-12 px-4 items-center lg:flex md:px-8">
+      <section className="mt-24 w-full mx-auto max-w-[1400px] pb-12 px-4 items-center lg:flex justify-between md:px-8">
         <div className="space-y-4 flex-1 sm:text-center lg:text-left">
+          <p className="text-white text-lg font-medium">Hi, I&apos;m,</p>
+
           <h1 className="text-white font-bold text-4xl xl:text-5xl">
-            One page Template for
-            <span className="text-indigo-400"> Digital agency</span>
+            Achem Habib Nomaer
           </h1>
+          <h2 className="text-white text-xl text-medium">
+            I&apos;m a{" "}
+            <span className="text-brand-500">full stack developer</span>
+          </h2>
           <p className="text-gray-300 max-w-xl leading-relaxed sm:mx-auto lg:ml-0">
             It is a long established fact that a reader will be distracted by
             the readable content of a page when looking at its layout. The point
@@ -54,24 +61,19 @@ export default function Hero() {
 function Header() {
   return (
     <header>
-      <nav className="i pt-5 px-4 mx-auto max-w-screen-xl sm:px-8 sm:flex sm:space-x-6">
-        <a href="javascript:void(0)">
-          <img
-            src="https://www.floatui.com/images/logo.svg"
-            width={120}
-            height={50}
-            alt="Float UI logo"
-          />
-        </a>
+      <nav className="i pt-5 px-4 mx-auto max-w-[1400px] sm:px-8 sm:flex sm:space-x-6">
+        <Link href="/" className="text-white font-medium text-xl">
+          <Image src={logo} alt="logo" width={100} height={100} />
+        </Link>
         <ul className=" text-gray-200 flex-1 items-center flex space-x-3 sm:space-x-6 sm:justify-end">
-          <li className="p-2 rounded-lg flex items-center border border-gray-600 bg-gray-800 justify-center  hover:border-gray-400 hover:bg-gray-600">
-            <IconBrandFacebook className="w-6 h-6" />
+          <li className="p-1.5 rounded-lg flex items-center border border-gray-600 bg-gray-800 justify-center  hover:border-gray-400 hover:bg-gray-600">
+            <IconBrandFacebook className="w-5 h-5 text-gray-300" />
           </li>
-          <li className="p-2 rounded-lg flex items-center border border-gray-600 bg-gray-800 justify-center  hover:border-gray-400 hover:bg-gray-600">
-            <IconBrandLinkedin className="w-6 h-6" />
+          <li className="p-1.5 rounded-lg flex items-center border border-gray-600 bg-gray-800 justify-center  hover:border-gray-400 hover:bg-gray-600">
+            <IconBrandLinkedin className="w-5 h-5 text-gray-300" />
           </li>
-          <li className="p-2 rounded-lg flex items-center border border-gray-600 bg-gray-800 justify-center  hover:border-gray-400 hover:bg-gray-600">
-            <IconBrandGithub className="w-6 h-6" />
+          <li className="p-1.5 rounded-lg flex items-center border border-gray-600 bg-gray-800 justify-center  hover:border-gray-400 hover:bg-gray-600">
+            <IconBrandGithub className="w-5 h-5 text-gray-300" />
           </li>
         </ul>
       </nav>
