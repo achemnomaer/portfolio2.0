@@ -67,3 +67,31 @@
     @apply bg-background text-foreground;
   }
 }
+
+.custom-shape-divider-bottom-1729234126 {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1729234126 svg {
+  position: relative;
+  display: block;
+  width: calc(261% + 1.3px);
+  height: 102px;
+}
+
+.custom-shape-divider-bottom-1729234126 .shape-fill {
+  fill: #1f2937;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1729234126 svg {
+    width: calc(261% + 1.3px);
+    height: 54px;
+  }
+}

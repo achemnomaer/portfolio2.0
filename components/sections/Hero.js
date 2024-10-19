@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
-import heroImg from "@/assets/illustrations/hero2.svg";
-import logo from "@/assets/logo2.svg";
+import heroImg from "@/assets/illustrations/hero3.svg";
+import logo from "@/assets/logo.svg";
 import Image from "next/image";
 
 import {
@@ -15,8 +15,8 @@ export default function Hero() {
   return (
     <div className="">
       <Header />
-      <section className="mt-24 w-full mx-auto max-w-[1400px] pb-12 px-4 items-center lg:flex justify-between md:px-8">
-        <div className="space-y-4 flex-1 sm:text-center lg:text-left">
+      <section className="mt-12 w-full mx-auto max-w-[1400px] py-12 px-4 items-center lg:flex justify-between md:px-8">
+        <div className="space-y-4 flex-1  lg:text-left">
           <p className="text-white text-lg font-medium">Hi, I&apos;m,</p>
 
           <h1 className="text-white font-bold text-4xl xl:text-5xl">
@@ -46,7 +46,7 @@ export default function Hero() {
             </a>
           </div>
         </div>
-        <div className="flex-1 text-center mt-7 lg:mt-0 lg:ml-3">
+        <div className="hidden lg:block flex-1 text-center mt-7 lg:mt-0 lg:ml-3">
           <Image
             src={heroImg}
             alt="hero illustrations"

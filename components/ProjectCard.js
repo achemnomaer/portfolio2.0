@@ -9,7 +9,7 @@ const ProjectCard = ({ project, reverse }) => {
     <div
       className={`flex flex-col lg:flex-row ${
         reverse ? "lg:flex-row-reverse" : ""
-      } items-center bg-gray-900 text-white  mb-12 w-full justify-center gap-x-12`}
+      } items-center  text-white  mb-12 w-full justify-center gap-x-12`}
     >
       {/* Project Image */}
       <div className="w-full lg:w-1/2 mb-6 lg:mb-0 relative  rounded-md">
