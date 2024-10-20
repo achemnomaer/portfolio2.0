@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import heroImg from "@/assets/illustrations/hero3.svg";
-import logo from "@/assets/logo.svg";
+import logo from "@/assets/logo2.svg";
 import Image from "next/image";
 
 import {

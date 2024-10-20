@@ -1,4 +1,5 @@
 "use client";
+import { IconPlayerPlay } from "@tabler/icons-react";
 import ImageCarousel from "../ImageCarousel";
 import {
   Modal,
@@ -16,10 +17,10 @@ export default function AnimatedModalDemo({ project }) {
       </ModalTrigger>
       <ModalBody>
         <ModalContent>
-          <div className=" w-full py-8  gap-x-4 gap-y-6 items-start justify-start max-w-4xl mx-auto max-h-[80vh] overflow-y-auto">
+          <div className=" w-full py-8  gap-x-4 gap-y-6 items-start justify-start max-w-4xl mx-auto max-h-[90vh] overflow-y-auto">
             <ImageCarousel imgs={project.projectImages} />
 
-            <div className="w-full p-4 space-y-8">
+            <div className="w-full p-4 space-y-8 mt-6">
               {/* Title of the project */}
               <h2 className="text-xl sm:text-3xl font-semibold text-gray-100">
                 {project.title}
@@ -39,32 +40,42 @@ export default function AnimatedModalDemo({ project }) {
 
               {/* project description */}
               <div className="flex flex-col gap-y-2">
-                <span className="text-sm text-gray-100">
-                  Project Description
-                </span>
-                <p className="text-gray-400">{project.description}</p>
+                <div className="flex gap-x-2 items-center">
+                  <IconPlayerPlay className="w-5 h-5 text-brand-500" />
+                  <span className="text-white">Project Description</span>
+                </div>
+                <p className="text-gray-300 ">{project.description}</p>
               </div>
 
               {/* problem statement */}
               <div className="flex flex-col gap-y-2">
-                <span className="text-sm text-gray-300">Problem Statement</span>
-                <p className="text-gray-100">
+                <div className="flex gap-x-2 items-center">
+                  <IconPlayerPlay className="w-5 h-5 text-brand-500" />
+                  <span className="text-white">Problem Statement</span>
+                </div>
+                <p className="text-gray-300 ">
                   {project.overview.problemStatement}
                 </p>
               </div>
 
               {/* Solution */}
               <div className="flex flex-col gap-y-2">
-                <span className="text-sm text-gray-300">Solution</span>
-                <p className="text-gray-100">{project.overview.solution}</p>
+                <div className="flex gap-x-2 items-center">
+                  <IconPlayerPlay className="w-5 h-5 text-brand-500" />
+                  <span className="text-white">Solutions</span>
+                </div>
+                <p className="text-gray-300 ">{project.overview.solution}</p>
               </div>
 
               {/* Key Features */}
               <div className="flex flex-col gap-y-2">
-                <span className="text-sm text-gray-300">Key Features</span>
-                <ul className="space-y-3">
+                <div className="flex gap-x-2 items-center">
+                  <IconPlayerPlay className="w-5 h-5 text-brand-500" />
+                  <span className="text-white">Key Features</span>
+                </div>
+                <ul className="pl-4 space-y-2 list-disc list-inside">
                   {project.keyFeatures?.map((feature, index) => (
-                    <li key={index} className="text-gray-100">
+                    <li key={index} className="text-gray-300">
                       {feature}
                     </li>
                   ))}
