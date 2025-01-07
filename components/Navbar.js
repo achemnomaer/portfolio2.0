@@ -1,11 +1,10 @@
 "use client";
 
 import {
-  IconBrandX,
-  IconExchange,
   IconHome,
-  IconNewSection,
+  IconMessageUser,
   IconTerminal2,
+  IconUser,
 } from "@tabler/icons-react";
 
 import { cn } from "@/lib/utils";
@@ -16,8 +15,8 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import Link from "next/link";
 import { useRef, useState } from "react";
+import { Link as ScrollLink } from "react-scroll";
 
 export default function Navbar() {
   let mouseX = useMotionValue(Infinity);
@@ -25,31 +24,25 @@ export default function Navbar() {
   const navItems = [
     {
       title: "Home",
-      icon: <IconHome className="h-full w-full text-neutral-300" />,
-      href: "#",
+      icon: <IconHome className="h-full w-full text-gray-300" />,
+      href: "home",
     },
 
     {
       title: "About",
-      icon: <IconTerminal2 className="h-full w-full text-neutral-300" />,
-      href: "#",
+      icon: <IconUser className="h-full w-full text-gray-300" />,
+      href: "about",
     },
     {
       title: "Projects",
-      icon: <IconNewSection className="h-full w-full text-neutral-300" />,
-      href: "#",
-    },
-
-    {
-      title: "Experience",
-      icon: <IconExchange className="h-full w-full text-neutral-300" />,
-      href: "#",
+      icon: <IconTerminal2 className="h-full w-full text-gray-300" />,
+      href: "projects",
     },
 
     {
       title: "Contact",
-      icon: <IconBrandX className="h-full w-full text-neutral-300" />,
-      href: "#",
+      icon: <IconMessageUser className="h-full w-full text-gray-300" />,
+      href: "contact",
     },
   ];
 
@@ -114,7 +107,12 @@ function IconContainer({ mouseX, title, icon, href }) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Link href={href}>
+    <ScrollLink
+      to={href}
+      smooth={true}
+      duration={500}
+      className="cursor-pointer"
+    >
       <motion.div
         ref={ref}
         style={{ width, height }}
@@ -141,6 +139,6 @@ function IconContainer({ mouseX, title, icon, href }) {
           {icon}
         </motion.div>
       </motion.div>
-    </Link>
+    </ScrollLink>
   );
 }
