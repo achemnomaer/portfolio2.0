@@ -8,7 +8,7 @@ export const Intro = () => (
     <p className="text-2xl text-gray-300 leading-snug">
       Hi, I’m <span className="text-white font-bold">Achem Habib Nomaer</span>.
     </p>
-    <h2 className="mt-4 text-3xl text-gray-300 leading-snug">
+    <h2 className="mt-4 text-2xl sm:text-3xl text-gray-300 leading-snug">
       A <span className="text-brand-500 font-bold">Full Stack Developer</span>{" "}
       building innovative digital solutions.
     </h2>

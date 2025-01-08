@@ -25,7 +25,7 @@ export const metadata = {
     title: "Portfolio | Achem - Full Stack Developer",
     description:
       "I’m a Full-Stack Web Developer creating seamless, user-friendly web applications.",
-    url: "https://your-website.com",
+    url: "https://achemnomaer.vercel.app/",
     siteName: "Achem Habib Nomaer",
     images: [
       {
@@ -43,7 +43,7 @@ export const metadata = {
     title: "Portfolio | Achem - Full Stack Developer",
     description:
       "I’m a Full-Stack Web Developer creating seamless, user-friendly web applications.",
-    images: ["/twitter-image.png"],
+    images: ["/og-image.png"],
   },
 };
 

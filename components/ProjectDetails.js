@@ -29,14 +29,12 @@ export function ProjectDetails({ project }) {
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
-  const buttonVariant = project.githubLink ? "ghost" : "secondary";
-
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
           <Button
-            variant={buttonVariant}
+            variant="secondary"
             className="bg-gray-800 text-white hover:bg-gray-700 hover:text-white"
           >
             Details
@@ -59,8 +57,8 @@ export function ProjectDetails({ project }) {
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
         <Button
-          variant={buttonVariant}
-          className="hover:bg-gray-700 hover:text-white"
+          variant="secondary"
+          className="bg-gray-800 text-white hover:bg-gray-700 hover:text-white"
         >
           Details
         </Button>

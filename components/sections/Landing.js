@@ -52,9 +52,8 @@ export default function Landing() {
               <Socials />
               <Block className="col-span-12 text-2xl md:text-5xl leading-snug font-semibold">
                 <p className="text-zinc-400 mt-4">
-                  I’m a Full-Stack Web Developer creating seamless,
-                  user-friendly web applications. Explore my work to see
-                  innovation in action!
+                  I’m a Full-Stack Developer creating seamless, user-friendly
+                  web applications. Explore my work to see innovation in action!
                 </p>
               </Block>
             </div>
