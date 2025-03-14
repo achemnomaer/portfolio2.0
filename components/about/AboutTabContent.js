@@ -51,24 +51,28 @@ function AboutTabContent() {
       <motion.div className="flex flex-col md:flex-row gap-8">
         {/* Text Content Section */}
         <motion.div
-          className="w-full md:w-2/3 flex flex-col space-y-6 leading-relaxed text-lg text-neutral-300"
+          className="w-full md:w-2/3 flex flex-col space-y-6 leading-relaxed  text-neutral-300"
           variants={containerVariants}
         >
           {/* Paragraph #1 */}
           <motion.p variants={itemVariants}>
-            Hi! I’m a full-stack developer passionate about building efficient
-            and user-friendly web applications. With expertise in React.js,
-            Next.js, Django, and Express.js, I’ve built diverse projects like
-            education consultancy, real estate, and ecommerce platforms...
+            Hey there! I’m a full-stack developer who loves turning ideas into slick, user-friendly web apps
+            (and occasionally making my computer question its existence). With expertise in React.js, Next.js,
+             Django, and Express.js, I’ve built apps for education platforms to real estate and e-commerce
+             sites—basically, if it involves code, I’m in.
           </motion.p>
 
           {/* Paragraph #2 */}
           <motion.p variants={itemVariants}>
-            I love turning ideas into functional, visually appealing solutions
-            and exploring emerging technologies like AI and machine learning.
-            Outside of coding, I enjoy playing cricket, football, working out,
-            and spending time with friends. Let’s connect and create something
-            amazing together!
+            When I’m not wrestling with my code, you’ll find me chasing 
+            cricket balls, kicking around a football, or pretending I’m the Hulk at the gym. And 
+            if there’s still time, I’m usually laughing it up with friends.
+          </motion.p>
+
+          <motion.p variants={itemVariants}>
+            Let’s connect! Whether you need a developer to bring your big idea to life, want to argue about whether dark mode is a
+            necessity or a lifestyle, or just feel like debating if CSS is magic or pure chaos—I’m all ears. 
+            (Spoiler: It’s both.)
           </motion.p>
 
           {/* Personal Info */}

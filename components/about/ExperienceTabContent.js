@@ -13,7 +13,7 @@ export default function ExperienceTabContent() {
 
           {/* Date Range */}
           <time className="mb-1 text-sm font-normal leading-none text-neutral-400">
-            August 2024 - January 2025
+            August 2024 - Present
           </time>
 
           {/* Position & Company */}
@@ -71,7 +71,7 @@ export default function ExperienceTabContent() {
               className="text-sm text-brand-400 hover:text-brand-500"
               target="_blank"
             >
-              Real Estate Website
+              ANProperty
             </a>
           </Link>
           <p className="mt-3 text-neutral-300 leading-relaxed max-w-3xl">

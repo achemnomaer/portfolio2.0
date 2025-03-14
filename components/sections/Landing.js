@@ -33,7 +33,7 @@ export default function Landing() {
                 </Link>
 
                 <Link
-                  href="/Resume-Achem Habib Nomaer.pdf"
+                  href="/Resume_Achem_Habib_Nomaer.pdf"
                   passHref
                   legacyBehavior
                 >
@@ -52,8 +52,7 @@ export default function Landing() {
               <Socials />
               <Block className="col-span-12 text-2xl md:text-5xl leading-snug font-semibold">
                 <p className="text-zinc-400 mt-4">
-                  I’m a Full-Stack Developer creating seamless, user-friendly
-                  web applications. Explore my work to see innovation in action!
+                I turn ideas into reality with code—sometimes on the first try, but mostly after a few bug fixes.
                 </p>
               </Block>
             </div>
