@@ -1,4 +1,4 @@
-import profileImg from "@/assets/profile1.png";
+import profileImg from "@/assets/profile2.png";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
