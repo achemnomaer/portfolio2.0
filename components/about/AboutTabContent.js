@@ -56,23 +56,20 @@ function AboutTabContent() {
         >
           {/* Paragraph #1 */}
           <motion.p variants={itemVariants}>
-            Hey there! I’m a full-stack developer who loves turning ideas into slick, user-friendly web apps
-            (and occasionally making my computer question its existence). With expertise in React.js, Next.js,
-             Django, and Express.js, I’ve built apps for education platforms to real estate and e-commerce
-             sites—basically, if it involves code, I’m in.
+            Hey there! I’m a full-stack developer who loves turning ideas into
+            slick, user-friendly web apps (and occasionally making my computer
+            question its existence). With expertise in React.js, Next.js,
+            Django, and Express.js, I’ve built apps for education platforms to
+            real estate and e-commerce sites—basically, if it involves code, I’m
+            in.
           </motion.p>
 
           {/* Paragraph #2 */}
           <motion.p variants={itemVariants}>
-            When I’m not wrestling with my code, you’ll find me chasing 
-            cricket balls, kicking around a football, or pretending I’m the Hulk at the gym. And 
-            if there’s still time, I’m usually laughing it up with friends.
-          </motion.p>
-
-          <motion.p variants={itemVariants}>
-            Let’s connect! Whether you need a developer to bring your big idea to life, want to argue about whether dark mode is a
-            necessity or a lifestyle, or just feel like debating if CSS is magic or pure chaos—I’m all ears. 
-            (Spoiler: It’s both.)
+            When I’m not wrestling with my code, you’ll find me chasing cricket
+            balls, kicking around a football, or pretending I’m the Hulk at the
+            gym. And if there’s still time, I’m usually laughing it up with
+            friends.
           </motion.p>
 
           {/* Personal Info */}
