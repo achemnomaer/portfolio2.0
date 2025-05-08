@@ -66,7 +66,7 @@ export default function ExperienceTabContent() {
           <h3 className="text-xl font-semibold text-white">
             Full Stack Developer
           </h3>
-          <Link href="https://gecare.co.uk" passHref legacyBehavior>
+          <Link href="https://anpropertybd.com" passHref legacyBehavior>
             <a
               className="text-sm text-brand-400 hover:text-brand-500"
               target="_blank"
