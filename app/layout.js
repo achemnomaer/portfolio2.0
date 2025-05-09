@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import { Analytics } from "@vercel/analytics/next";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -55,6 +56,7 @@ export default function RootLayout({ children }) {
       >
         {children}
         <Navbar />
+        <Analytics />
       </body>
     </html>
   );
