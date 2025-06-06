@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 
-export default function ImageCarousel({ imgs, project, getCaption }) {
+export default function ImageCarousel({ imgs, project }) {
   return (
     <Carousel className="w-full">
       <CarouselContent className="">
@@ -20,9 +20,9 @@ export default function ImageCarousel({ imgs, project, getCaption }) {
                 className="rounded-lg"
               />
             </div>
-            {getCaption && (
+            {project.imageCaptions && project.imageCaptions[index] && (
               <p className="text-sm text-gray-400 text-center px-4">
-                {getCaption(index, project)}
+                {project.imageCaptions[index]}
               </p>
             )}
           </CarouselItem>

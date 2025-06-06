@@ -108,7 +108,7 @@ export default function Contact() {
             {/* Primary Contact Button */}
             <Link
               href="mailto:achemnomaer@gmail.com"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-brand-500 to-brand-600 text-white rounded-lg hover:from-brand-600 hover:to-brand-700 transition-all duration-300 font-medium"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-all duration-300 font-medium"
             >
               <FiMail className="w-5 h-5" />
               Send Email

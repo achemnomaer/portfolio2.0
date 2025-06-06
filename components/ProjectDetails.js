@@ -89,64 +89,9 @@ export function ProjectDetails({ project }) {
 }
 
 function Detail({ className, project }) {
-  // Image captions based on project type
-  const getImageCaption = (index, project) => {
-    const captions = {
-      "Real Estate Website": [
-        "Homepage with property search and featured listings",
-        "Advanced property filtering and search results",
-        "Detailed property view with gallery and specifications",
-        "Contact form for property inquiries",
-        "Property submission form for sellers",
-        "Admin dashboard overview",
-        "Admin property management interface",
-        "Property listing management panel"
-      ],
-      "Education Consultancy Website": [
-        "Homepage showcasing services and destinations",
-        "Course finder with search and filter options",
-        "Statistics and success metrics display",
-        "Student success stories and testimonials",
-        "User dashboard for profile and applications",
-        "Blog section with educational content"
-      ],
-      "CMS for Education Consultancy": [
-        "Admin dashboard with key metrics",
-        "Counseling session management",
-        "Student profile management interface",
-        "Individual student profile details",
-        "Student application tracking system",
-        "Course management panel",
-        "Success stories content management",
-        "Blog management interface",
-        "Blog creation and editing tools"
-      ],
-      "Job Jatraa – Career Preparation Platform": [
-        "Homepage with bootcamp overview",
-        "Why choose us section highlighting benefits",
-        "Course details and curriculum breakdown",
-        "Detailed syllabus and learning outcomes",
-        "Enrollment process and pricing"
-      ],
-      "Gift Store - eCommerce Website": [
-        "Homepage with featured products",
-        "Product catalog with filtering options",
-        "Product detail page with specifications",
-        "Shopping cart with item management",
-        "Wishlist for saved products",
-        "Checkout process and order summary",
-        "Payment gateway integration",
-        "Order history and tracking",
-        "Address management for delivery"
-      ]
-    };
-
-    return captions[project.title]?.[index] || `Project screenshot ${index + 1}`;
-  };
-
   return (
     <div className="w-full pb-16 gap-x-4 gap-y-6">
-      <ImageCarousel imgs={project.projectImages} project={project} getCaption={getImageCaption} />
+      <ImageCarousel imgs={project.projectImages} project={project} />
 
       <div className="w-full p-4 space-y-8 mt-6">
         {/* Title of the project */}
@@ -157,10 +102,6 @@ function Detail({ className, project }) {
         {/* Live URL if available */}
         {project.liveLink && (
           <div className="flex flex-col gap-y-2">
-            <div className="flex gap-x-2 items-center">
-              <IconSquareRoundedChevronRight className="w-6 h-6 text-brand-500" />
-              <span className="text-white font-semibold text-lg">Live URL</span>
-            </div>
             <Link href={project.liveLink} passHref legacyBehavior>
               <a
                 target="_blank"
@@ -175,10 +116,6 @@ function Detail({ className, project }) {
 
         {/* Tech Stack */}
         <div className="flex flex-col gap-y-2">
-          <div className="flex gap-x-2 items-center">
-            <IconSquareRoundedChevronRight className="w-6 h-6 text-brand-500" />
-            <span className="text-white font-semibold text-lg">Tech Stack</span>
-          </div>
           <div className="flex flex-wrap gap-2">
             {project.techStack.map((tech, index) => (
               <span
