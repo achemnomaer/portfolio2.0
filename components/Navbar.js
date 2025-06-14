@@ -1,112 +1,74 @@
 "use client";
 
-import logo from "@/assets/logo.svg";
+import { fadeInUp } from "@/lib/animations";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { FiDownload, FiMenu, FiX } from "react-icons/fi";
-import { Link as ScrollLink } from "react-scroll";
+import { usePathname } from "next/navigation";
+import { FiDownload } from "react-icons/fi";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const navItems = [
-    { name: "About", href: "about" },
-    { name: "Projects", href: "projects" },
-    { name: "Contact", href: "contact" },
+    { name: "Home", href: "/" },
+    { name: "Projects", href: "/projects" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
+
+  const isActive = (href) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      className="fixed top-0 left-0 right-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-800"
+      {...fadeInUp}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4">
+      <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="group">
-            <Image
-              src={logo}
-              alt="Achem Habib Nomaer Logo"
-              width={50}
-              height={50}
-              priority
-              className="group-hover:opacity-80 transition-opacity duration-300"
-            />
+          <Link href="/" className="group hidden sm:block">
+            <motion.span
+              className="text-2xl font-bold text-white group-hover:text-brand-400 transition-colors"
+              whileHover={{ scale: 1.05 }}
+            >
+              AH.
+            </motion.span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <div className="flex items-center gap-6 text-gray-400 text-sm">
+          {/* Navigation - Always visible */}
+          <div className="flex items-center gap-4 md:gap-8">
+            <div className="flex items-center gap-1">
               {navItems.map((item) => (
-                <ScrollLink
-                  key={item.name}
-                  to={item.href}
-                  smooth={true}
-                  duration={500}
-                  className="hover:text-white transition-colors cursor-pointer py-2"
-                >
-                  {item.name}
-                </ScrollLink>
+                <Link key={item.name} href={item.href}>
+                  <motion.span
+                    className={`px-3 md:px-4 py-2 rounded-lg text-sm transition-all duration-300 ${
+                      isActive(item.href)
+                        ? "bg-gray-800 text-white"
+                        : "text-gray-400 hover:text-white hover:bg-gray-800/50"
+                    }`}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {item.name}
+                  </motion.span>
+                </Link>
               ))}
             </div>
 
             <Link href="/Resume_Achem_Habib_Nomaer.pdf" passHref legacyBehavior>
               <a
                 target="_blank"
-                className="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-white transition-colors duration-300 text-sm border border-gray-700 rounded-lg hover:border-gray-600"
+                className="hidden md:flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-white transition-colors duration-300 text-sm border border-gray-700 rounded-lg hover:border-gray-600"
               >
                 <FiDownload className="w-4 h-4" />
                 Resume
               </a>
             </Link>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-gray-400 hover:text-white transition-colors"
-          >
-            {isOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
-          </button>
         </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <motion.div
-            className="md:hidden mt-4 pb-4 border-t border-gray-800"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-          >
-            <div className="flex flex-col gap-4 pt-4">
-              {navItems.map((item) => (
-                <ScrollLink
-                  key={item.name}
-                  to={item.href}
-                  smooth={true}
-                  duration={500}
-                  className="text-gray-400 hover:text-white transition-colors cursor-pointer py-2"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </ScrollLink>
-              ))}
-              <Link href="/Resume_Achem_Habib_Nomaer.pdf" passHref legacyBehavior>
-                <a
-                  target="_blank"
-                  className="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-white transition-colors duration-300 text-sm border border-gray-700 rounded-lg hover:border-gray-600 w-fit"
-                >
-                  <FiDownload className="w-4 h-4" />
-                  Resume
-                </a>
-              </Link>
-            </div>
-          </motion.div>
-        )}
       </div>
     </motion.nav>
   );
