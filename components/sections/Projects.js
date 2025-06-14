@@ -9,7 +9,6 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      // Staggers children so they animate one after the other
       staggerChildren: 0.2,
     },
   },
@@ -31,32 +30,39 @@ export default function Projects() {
   return (
     <motion.section
       id="projects"
-      // Animate when this section enters the viewport
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
-      className="max-w-7xl px-4 sm:px-8 mx-auto flex flex-col w-full py-20 md:py-28"
+      className="py-20 px-4 sm:px-6 lg:px-8"
     >
-      {/* Title */}
-      <motion.div
-        className="mx-auto max-w-3xl text-center mb-8 space-y-4"
-        variants={itemVariants}
-      >
-        <span className="px-3 py-1 bg-purple-600/10 text-brand-500 rounded-full text-sm tracking-wide">
-          Projects
-        </span>
-        <h1 className="uppercase text-3xl md:text-4xl font-semibold text-white">
-          My Work
-        </h1>
-      </motion.div>
-
-      {/* Project Cards */}
-      {projects.map((project, index) => (
-        <motion.div key={index} variants={itemVariants}>
-          <ProjectCard project={project} reverse={index % 2 !== 0} />
+      <div className="max-w-7xl mx-auto">
+        {/* Title */}
+        <motion.div
+          className="text-center mb-16"
+          variants={itemVariants}
+        >
+          <span className="px-3 py-1 bg-brand-500/10 text-brand-400 rounded-full text-sm tracking-wide font-medium">
+            Portfolio
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mt-4 mb-4">
+            Featured Projects
+          </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            A collection of projects that showcase my skills in full-stack development,
+            from concept to deployment.
+          </p>
         </motion.div>
-      ))}
+
+        {/* Project Cards */}
+        <div className="space-y-16">
+          {projects.map((project, index) => (
+            <motion.div key={index} variants={itemVariants}>
+              <ProjectCard project={project} reverse={index % 2 !== 0} />
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </motion.section>
   );
 }

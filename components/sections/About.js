@@ -19,8 +19,6 @@ export default function About() {
 
   const handleTabClick = (tabId) => setActiveTab(tabId);
 
-  // Animation Variants
-  // Reuse these (or similar) across multiple sections for a consistent animation style
   const titleVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -42,92 +40,84 @@ export default function About() {
 
   return (
     <motion.section
-      className="text-white min-h-[70vh] max-w-6xl mx-auto px-4 py-16"
+      className="py-20 px-4 sm:px-6 lg:px-8"
       id="about"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      // Optional: if you want it to animate again each time it enters the viewport,
-      // remove `once: true` above.
     >
-      {/* Title */}
-      <motion.div
-        className="mx-auto max-w-3xl text-center mb-8 space-y-4"
-        variants={titleVariants}
-      >
-        <motion.span
-          className="px-3 py-1 bg-purple-600/10 text-brand-500 rounded-full text-sm tracking-wide"
+      <div className="max-w-6xl mx-auto">
+        {/* Title */}
+        <motion.div
+          className="text-center mb-16"
           variants={titleVariants}
         >
-          About Me
-        </motion.span>
-        <motion.h1
-          className="uppercase text-3xl md:text-4xl font-extrabold"
-          variants={titleVariants}
+          <span className="px-3 py-1 bg-brand-500/10 text-brand-400 rounded-full text-sm tracking-wide font-medium">
+            About Me
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mt-4 mb-4">
+            Get To Know Me
+          </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Learn more about my journey, skills, and experiences in web development.
+          </p>
+        </motion.div>
+
+        {/* Tabs Navigation */}
+        <motion.div
+          className="flex items-center justify-center mb-8"
+          role="tablist"
+          aria-orientation="horizontal"
+          variants={contentVariants}
         >
-          Get To Know Me
-        </motion.h1>
-      </motion.div>
-
-      {/* Tabs Navigation */}
-      <motion.div
-        className="flex items-end justify-center"
-        role="tablist"
-        aria-orientation="horizontal"
-        variants={contentVariants}
-      >
-        {TABS.map((tab) => (
-          <motion.button
-            key={tab.id}
-            type="button"
-            role="tab"
-            aria-selected={activeTab === tab.id}
-            aria-controls={`tab-panel-${tab.id}`}
-            onClick={() => handleTabClick(tab.id)}
-            className={`px-4 py-2 text-sm font-medium 
-              border border-b-0 border-gray-700 
-              rounded-t-md focus:outline-none
-              transition-colors
-              ${
-                activeTab === tab.id
-                  ? "bg-gray-900 text-brand-500 shadow-sm"
-                  : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-              }
-            `}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {tab.label}
-          </motion.button>
-        ))}
-      </motion.div>
-
-      {/* Fixed Border for Tab Panel */}
-      <motion.div
-        className="p-4 border border-gray-700 rounded-b-md min-h-[60vh]"
-        variants={contentVariants}
-      >
-        {/* AnimatePresence to animate tab content in/out */}
-        <AnimatePresence mode="wait">
-          {TABS.map((tab) =>
-            activeTab === tab.id ? (
-              <motion.div
+          <div className="flex bg-gray-800 rounded-lg p-1">
+            {TABS.map((tab) => (
+              <motion.button
                 key={tab.id}
-                id={`tab-panel-${tab.id}`}
-                role="tabpanel"
-                aria-labelledby={`tab-${tab.id}`}
-                className="md:p-6"
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                variants={contentVariants}
+                type="button"
+                role="tab"
+                aria-selected={activeTab === tab.id}
+                aria-controls={`tab-panel-${tab.id}`}
+                onClick={() => handleTabClick(tab.id)}
+                className={`px-6 py-3 text-sm font-medium rounded-md transition-all duration-300 ${
+                  activeTab === tab.id
+                    ? "bg-brand-500 text-gray-900 shadow-lg"
+                    : "text-gray-400 hover:text-white hover:bg-gray-700"
+                }`}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                {tab.content}
-              </motion.div>
-            ) : null
-          )}
-        </AnimatePresence>
-      </motion.div>
+                {tab.label}
+              </motion.button>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Tab Content */}
+        <motion.div
+          className="bg-gray-800 rounded-xl p-8 min-h-[60vh]"
+          variants={contentVariants}
+        >
+          <AnimatePresence mode="wait">
+            {TABS.map((tab) =>
+              activeTab === tab.id ? (
+                <motion.div
+                  key={tab.id}
+                  id={`tab-panel-${tab.id}`}
+                  role="tabpanel"
+                  aria-labelledby={`tab-${tab.id}`}
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  variants={contentVariants}
+                >
+                  {tab.content}
+                </motion.div>
+              ) : null
+            )}
+          </AnimatePresence>
+        </motion.div>
+      </div>
     </motion.section>
   );
 }

@@ -6,58 +6,19 @@ import Projects from "@/components/sections/Projects";
 export default function Home() {
   return (
     <div>
-      <div name="home" className="bg-gray-900 relative">
+      <div name="home" className="bg-gray-900">
         <Landing />
       </div>
 
-      <div name="about" className="bg-gray-800 relative">
-        <div className="custom-shape-divider-top-1735541384">
-          <svg
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
-              className="shape-fill"
-            ></path>
-          </svg>
-        </div>
-        <About />
-      </div>
-
-      <div name="projects" className="bg-gray-900 relative">
-        <div className="custom-shape-divider-top-1735528947">
-          <svg
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
-              className="shape-fill"
-            ></path>
-          </svg>
-        </div>
+      <div name="projects" className="bg-gray-800">
         <Projects />
       </div>
 
-      <div name="contact" className="bg-gray-800 relative">
-        <div className="custom-shape-divider-top-1735541384">
-          <svg
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
-              className="shape-fill"
-            ></path>
-          </svg>
-        </div>
+      <div name="about" className="bg-gray-900">
+        <About />
+      </div>
+
+      <div name="contact" className="bg-gray-800">
         <Contact />
       </div>
     </div>

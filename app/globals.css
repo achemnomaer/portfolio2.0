@@ -68,75 +68,25 @@
   }
 }
 
-.custom-shape-divider-top-1735528947 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-.custom-shape-divider-top-1735528947 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 37px;
-  transform: rotateY(180deg);
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.custom-shape-divider-top-1735528947 .shape-fill {
-  fill: #1f2937;
+::-webkit-scrollbar-track {
+  background: #1f2937;
 }
 
-/** For tablet devices **/
-@media (min-width: 768px) and (max-width: 1023px) {
-  .custom-shape-divider-top-1735528947 svg {
-    width: calc(100% + 1.3px);
-    height: 25px;
-  }
+::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
 }
 
-/** For mobile devices **/
-@media (max-width: 767px) {
-  .custom-shape-divider-top-1735528947 svg {
-    width: calc(100% + 1.3px);
-    height: 22px;
-  }
-}
-
-.custom-shape-divider-top-1735541384 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.custom-shape-divider-top-1735541384 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 37px;
-}
-
-.custom-shape-divider-top-1735541384 .shape-fill {
-  fill: #111827;
-}
-
-/** For tablet devices **/
-@media (min-width: 768px) and (max-width: 1023px) {
-  .custom-shape-divider-top-1735541384 svg {
-    width: calc(100% + 1.3px);
-    height: 25px;
-  }
-}
-
-/** For mobile devices **/
-@media (max-width: 767px) {
-  .custom-shape-divider-top-1735541384 svg {
-    width: calc(100% + 1.3px);
-    height: 22px;
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
 }

@@ -46,7 +46,7 @@ export function ProjectDetails({ project }) {
             <DialogTitle>Project Details</DialogTitle>
             <DialogDescription>Details of the project</DialogDescription>
           </DialogHeader>
-          <div>
+          <div className="max-w-full">
             <Detail project={project} />
           </div>
         </DialogContent>
@@ -69,7 +69,7 @@ export function ProjectDetails({ project }) {
           <DrawerTitle>Project Details</DrawerTitle>
           <DrawerDescription>Details of the project</DrawerDescription>
         </DrawerHeader>
-        <div className="h-full overflow-y-auto mt-4">
+        <div className="h-full overflow-y-auto mt-4 max-w-full">
           <Detail project={project} />
         </div>
 
@@ -90,10 +90,12 @@ export function ProjectDetails({ project }) {
 
 function Detail({ className, project }) {
   return (
-    <div className="w-full pb-16 gap-x-4 gap-y-6">
-      <ImageCarousel imgs={project.projectImages} project={project} />
+    <div className="w-full pb-16 gap-x-4 gap-y-6 max-w-full overflow-hidden">
+      <div className="max-w-full">
+        <ImageCarousel imgs={project.projectImages} project={project} />
+      </div>
 
-      <div className="w-full p-4 space-y-8 mt-6">
+      <div className="w-full p-4 space-y-8 mt-6 max-w-full">
         {/* Title of the project */}
         <h2 className="text-xl sm:text-3xl font-semibold text-gray-100">
           {project.title}
@@ -105,10 +107,10 @@ function Detail({ className, project }) {
             <Link href={project.liveLink} passHref legacyBehavior>
               <a
                 target="_blank"
-                className="text-brand-400 hover:text-brand-500 flex gap-x-2 items-center transition-colors"
+                className="text-brand-400 hover:text-brand-500 flex gap-x-2 items-center transition-colors break-all"
               >
-                <IconExternalLink className="w-5 h-5" />
-                <span>{project.liveLink}</span>
+                <IconExternalLink className="w-5 h-5 flex-shrink-0" />
+                <span className="break-all">{project.liveLink}</span>
               </a>
             </Link>
           </div>
@@ -131,7 +133,7 @@ function Detail({ className, project }) {
         {/* Project Description */}
         <div className="flex flex-col gap-y-2">
           <div className="flex gap-x-2 items-center">
-            <IconSquareRoundedChevronRight className="w-6 h-6 text-brand-500" />
+            <IconSquareRoundedChevronRight className="w-6 h-6 text-brand-500 flex-shrink-0" />
             <span className="text-white font-semibold text-lg">
               Project Description
             </span>
@@ -143,7 +145,7 @@ function Detail({ className, project }) {
         {project.keyFeatures && (
           <div className="flex flex-col gap-y-2">
             <div className="flex gap-x-2 items-center">
-              <IconSquareRoundedChevronRight className="w-6 h-6 text-brand-500" />
+              <IconSquareRoundedChevronRight className="w-6 h-6 text-brand-500 flex-shrink-0" />
               <span className="text-white font-semibold text-lg">
                 Key Features
               </span>

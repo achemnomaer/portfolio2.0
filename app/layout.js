@@ -17,7 +17,7 @@ const geistMono = localFont({
 export const metadata = {
   title: "Portfolio | Achem - Full Stack Developer",
   description:
-    "I’m a Full-Stack Web Developer creating seamless, user-friendly web applications.",
+    "I'm a Full-Stack Web Developer creating seamless, user-friendly web applications.",
   icons: {
     icon: "/favicon.ico", // For browsers
     apple: "/apple-touch-icon.png", // For iOS Home Screen
@@ -25,7 +25,7 @@ export const metadata = {
   openGraph: {
     title: "Portfolio | Achem - Full Stack Developer",
     description:
-      "I’m a Full-Stack Web Developer creating seamless, user-friendly web applications.",
+      "I'm a Full-Stack Web Developer creating seamless, user-friendly web applications.",
     url: "https://achemnomaer.vercel.app/",
     siteName: "Achem Habib Nomaer",
     images: [
@@ -43,7 +43,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Portfolio | Achem - Full Stack Developer",
     description:
-      "I’m a Full-Stack Web Developer creating seamless, user-friendly web applications.",
+      "I'm a Full-Stack Web Developer creating seamless, user-friendly web applications.",
     images: ["/og-image.png"],
   },
 };
@@ -54,8 +54,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900`}
       >
-        {children}
         <Navbar />
+        {children}
         <Analytics />
       </body>
     </html>

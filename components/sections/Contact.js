@@ -50,7 +50,7 @@ export default function Contact() {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <motion.div
           className="text-center mb-16"
@@ -59,7 +59,7 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="px-3 py-1 bg-purple-600/10 text-brand-500 rounded-full text-sm tracking-wide">
+          <span className="px-3 py-1 bg-brand-500/10 text-brand-400 rounded-full text-sm tracking-wide font-medium">
             Contact
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mt-4 mb-4">
@@ -85,7 +85,7 @@ export default function Contact() {
             <div className="space-y-6">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-brand-400">
+                  <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center text-brand-400">
                     {item.icon}
                   </div>
                   <div>
@@ -108,7 +108,7 @@ export default function Contact() {
             {/* Primary Contact Button */}
             <Link
               href="mailto:achemnomaer@gmail.com"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-all duration-300 font-medium"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-500 text-gray-900 rounded-lg hover:bg-brand-400 transition-all duration-300 font-medium"
             >
               <FiMail className="w-5 h-5" />
               Send Email
@@ -132,7 +132,7 @@ export default function Contact() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 border border-gray-700 hover:border-brand-500"
+                  className="group p-6 bg-gray-700 rounded-lg hover:bg-gray-600 transition-all duration-300 border border-gray-600 hover:border-brand-400"
                 >
                   <div className="flex items-center gap-3">
                     <div className="text-gray-400 group-hover:text-brand-400 transition-colors">
@@ -146,7 +146,7 @@ export default function Contact() {
               ))}
             </div>
 
-            <div className="p-6 bg-gray-800 rounded-lg border border-gray-700">
+            <div className="p-6 bg-gray-700 rounded-lg border border-gray-600">
               <h4 className="text-white font-medium mb-2">Quick Response</h4>
               <p className="text-gray-400 text-sm">
                 I typically respond to emails within 24 hours. For urgent matters, 
