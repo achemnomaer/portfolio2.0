@@ -158,16 +158,6 @@ export default function Landing() {
             </a>
           </motion.div>
         </div>
-
-        {/* Minimal scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-        >
-          <div className="w-px h-16 bg-gradient-to-b from-transparent via-gray-600 to-transparent"></div>
-        </motion.div>
       </motion.div>
     </section>
   );

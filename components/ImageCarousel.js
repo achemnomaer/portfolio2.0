@@ -11,26 +11,34 @@ export default function ImageCarousel({ imgs, project }) {
   return (
     <div className="w-full max-w-full">
       <Carousel className="w-full">
-        <CarouselContent className="">
+        <CarouselContent>
           {imgs.map((img, index) => (
             <CarouselItem key={index} className="space-y-3">
-              <div className="relative w-full max-w-full overflow-hidden">
-                <Image 
-                  src={img} 
+              {/* Image */}
+              <div
+                className="relative w-full max-w-full bg-gray-900 rounded-lg overflow-hidden"
+                style={{ aspectRatio: "16/9" }}
+              >
+                <Image
+                  src={img.src}
                   alt={`${project.title} screenshot ${index + 1}`}
-                  className="rounded-lg w-full h-auto object-contain max-w-full"
-                  style={{ maxWidth: '100%', height: 'auto' }}
+                  className="object-contain p-4"
+                  fill
                 />
               </div>
-              {project.imageCaptions && project.imageCaptions[index] && (
+
+              {/* Caption */}
+              {img.caption && (
                 <p className="text-sm text-gray-400 text-center px-4">
-                  {project.imageCaptions[index]}
+                  {img.caption}
                 </p>
               )}
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="mt-4 flex">
+
+        {/* Navigation Buttons */}
+        <div className="mt-4 flex justify-center gap-2">
           <CarouselPrevious />
           <CarouselNext />
         </div>

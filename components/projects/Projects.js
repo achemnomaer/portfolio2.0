@@ -9,9 +9,9 @@ import Link from "next/link";
 
 export default function Projects() {
   return (
-    <div className="min-h-screen bg-gray-900 pt-20">
+    <div className="min-h-screen bg-gray-900 py-20 md:py-28">
       <motion.section
-        className="py-20 px-4 sm:px-6 lg:px-8"
+        className="px-4 sm:px-6 lg:px-8"
         initial="initial"
         animate="animate"
         variants={staggerContainer}
@@ -104,7 +104,7 @@ export default function Projects() {
                       <div className="aspect-video bg-gray-800 rounded-lg overflow-hidden">
                         <Image
                           src={
-                            project.projectImages[0] ||
+                            project.projectImages[0]?.src ||
                             "/placeholder.svg?height=400&width=600"
                           }
                           alt={project.title}

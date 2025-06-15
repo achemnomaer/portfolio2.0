@@ -1,6 +1,6 @@
 "use client";
 
-import profileImg from "@/assets/profile2.png";
+import profileImg from "@/assets/profile3.jpeg";
 import {
   fadeInLeft,
   fadeInRight,
@@ -28,6 +28,8 @@ import {
   SiPostgresql,
   SiPostman,
   SiReact,
+  SiSanity,
+  SiSupabase,
   SiTailwindcss,
   SiX,
 } from "react-icons/si";
@@ -71,6 +73,8 @@ export default function About() {
         { name: "Express.Js", icon: SiExpress, color: "#FFFFFF" },
         { name: "Python", icon: FaPython, color: "#306998" },
         { name: "Django", icon: SiDjango, color: "#0C4B33" },
+        { name: "Supabase", icon: SiSupabase, color: "#3FCF8E" }, // Supabase green
+        { name: "Sanity", icon: SiSanity, color: "#F03E2F" }, // Sanity red
       ],
     },
     {
@@ -107,94 +111,61 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 pt-20">
+    <div className="min-h-screen bg-gray-900 py-20 md:py-36">
       <motion.section
-        className="py-20 px-4 sm:px-6 lg:px-8"
+        className="px-4 sm:px-6 lg:px-8"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.1 }}
         variants={staggerContainer}
       >
-        <div className="max-w-6xl mx-auto space-y-32">
+        <div className="max-w-7xl mx-auto space-y-32">
           {/* Personal Introduction */}
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start"
+            className="grid grid-cols-1 lg:grid-cols-10 gap-16 items-start"
             variants={staggerItem}
           >
-            <motion.div className="space-y-8" {...fadeInLeft}>
+            <motion.div className="space-y-8 lg:col-span-6" {...fadeInLeft}>
               <h2 className="text-4xl md:text-5xl font-light text-white">
                 Hi, I&apos;m Achem Habib Nomaer.
               </h2>
 
               <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
                 <p>
-                  I&apos;m a full-stack developer dedicated to turning ideas
-                  into creative solutions. I specialize in creating seamless and
-                  intuitive user experiences.
+                  I&apos;m a passionate and detail-oriented Full Stack Web
+                  Developer with 1+ years of experience building robust and
+                  scalable web applications. I specialize in MERN (MongoDB,
+                  Express.js, React, Node.js) and Django stacks, and enjoy
+                  creating clean, efficient code that brings ideas to life.
                 </p>
 
                 <p>
-                  My approach focuses on creating scalable, high-performing
-                  solutions tailored to both user needs and business objectives.
-                  By prioritizing performance, accessibility, and
-                  responsiveness, I strive to deliver experiences that not only
-                  engage users but also drive tangible results.
+                  Over the past year, I’ve worked on a variety of real-world
+                  projects including education consultancy portals, real estate
+                  website, career preparation platform and international event
+                  management website. Whether it&apos;s designing intuitive user
+                  interfaces or building secure RESTful APIs, I enjoy solving
+                  problems with clean, maintainable code.
                 </p>
-              </div>
-
-              {/* Contact Info */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-8">
-                <div>
-                  <p className="text-sm font-semibold uppercase text-gray-500 mb-2">
-                    Email
-                  </p>
-                  <p className="text-white text-lg">achemnomaer@gmail.com</p>
-                </div>
-
-                <div>
-                  <p className="text-sm font-semibold uppercase text-gray-500 mb-2">
-                    Phone
-                  </p>
-                  <p className="text-white text-lg">+8801889197863</p>
-                </div>
-
-                <div>
-                  <p className="text-sm font-semibold uppercase text-gray-500 mb-2">
-                    Location
-                  </p>
-                  <p className="text-white text-lg">Chittagong, Bangladesh</p>
-                </div>
-
-                <div>
-                  <p className="text-sm font-semibold uppercase text-gray-500 mb-2">
-                    Socials
-                  </p>
-                  <div className="flex items-center gap-4">
-                    {socials.map((social, index) => (
-                      <Link
-                        key={index}
-                        href={social.href}
-                        passHref
-                        legacyBehavior
-                      >
-                        <a
-                          target="_blank"
-                          className="text-gray-400 hover:text-brand-400 transition-colors"
-                        >
-                          <motion.span whileHover={{ scale: 1.2 }}>
-                            {social.icon}
-                          </motion.span>
-                        </a>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
+                <p>
+                  I’m currently working as a full-time developer and always open
+                  to learning new technologies — especially in the fields of
+                  artificial intelligence and machine learning, which deeply
+                  fascinate me.
+                </p>
+                <p>
+                  Beyond the screen, I’m a cricket lover, an occasional
+                  gym-goer, and a seeker of good vibes, laughter, and meaningful
+                  friendships. I’m also passionate about exploring philosophical
+                  ideas, questioning the world around us, and imagining where
+                  technology might take us — maybe even through time.
+                </p>
               </div>
             </motion.div>
 
             {/* Profile Image */}
             <motion.div
-              className="flex justify-center lg:justify-end"
+              className="flex justify-center lg:justify-end lg:col-span-4"
               {...fadeInRight}
             >
               <motion.div

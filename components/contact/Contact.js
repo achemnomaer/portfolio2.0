@@ -52,9 +52,9 @@ export default function Contact() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 pt-20">
+    <div className="min-h-screen bg-gray-900 py-20 md:py-28">
       <motion.section
-        className="py-20 px-4 sm:px-6 lg:px-8"
+        className="px-4 sm:px-6 lg:px-8"
         initial="initial"
         animate="animate"
         variants={staggerContainer}
