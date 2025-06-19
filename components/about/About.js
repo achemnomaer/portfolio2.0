@@ -99,14 +99,26 @@ export default function About() {
     {
       company: "Global Education Care",
       position: "Full Stack Developer",
-      period: "August 2024 - Present",
+      period: "August 2024 – Present",
       link: "https://gecare.co.uk",
+    },
+    {
+      company: "ANTGEC",
+      position: "Full Stack Developer (Freelance)",
+      period: "2024",
+      link: "https://antgec.com",
     },
     {
       company: "ANProperty",
       position: "Full Stack Developer (Freelance)",
       period: "2024",
-      link: "https://anpropertybd.com",
+      link: "https://anpropertybd.com/en",
+    },
+    {
+      company: "Job Jatraa",
+      position: "Frontend Developer (Freelance)",
+      period: "2024",
+      link: "https://jobjatraa.com",
     },
   ];
 
@@ -257,15 +269,13 @@ export default function About() {
                   <Link href={exp.link} passHref legacyBehavior>
                     <a
                       target="_blank"
-                      className="text-gray-400 hover:text-brand-400 transition-colors text-lg"
+                      className="text-gray-400 hover:text-brand-400 transition-colors text-3xl md:text-4xl font-semibold"
                     >
                       {exp.company}
                     </a>
                   </Link>
 
-                  <h3 className="text-3xl md:text-4xl font-semibold text-white">
-                    {exp.position}
-                  </h3>
+                  <h3 className="text-lg text-white">{exp.position}</h3>
 
                   <p className="text-gray-500 text-lg">{exp.period}</p>
                 </motion.div>
