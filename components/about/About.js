@@ -103,12 +103,6 @@ export default function About() {
       link: "https://gecare.co.uk",
     },
     {
-      company: "ANTGEC",
-      position: "Full Stack Developer (Freelance)",
-      period: "2024",
-      link: "https://antgec.com",
-    },
-    {
       company: "ANProperty",
       position: "Full Stack Developer (Freelance)",
       period: "2024",
@@ -117,8 +111,14 @@ export default function About() {
     {
       company: "Job Jatraa",
       position: "Frontend Developer (Freelance)",
-      period: "2024",
+      period: "2025",
       link: "https://jobjatraa.com",
+    },
+    {
+      company: "ANTGEC",
+      position: "Full Stack Developer (Freelance)",
+      period: "2025",
+      link: "https://antgec.com",
     },
   ];
 
